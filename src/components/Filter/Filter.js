@@ -1,28 +1,26 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { v4 as uuidv4 } from 'uuid';
+import styles from './Filter.module.css'
+import propTypes from 'prop-types';
 
-const Filter = ({ value, onChangeFilter, contactListLength }) => {
-  const filterInputId = uuidv4();
-  return (
-    contactListLength >= 1 && (
-      <>
-        <label >Find contacts by name</label>
-        <input
-          type="text"
-          id={filterInputId}
-          placeholder="Enter contact name..."
-          value={value}
-          onChange={onChangeFilter}
-        />
-      </>)
-  );
-};
+const Filter = ({value, onChange}) => {
+    
+        return(
+            <label>
+                Find contacts by name
+                <input
+                className={styles.inp}
+                type="text"
+                name="filter"
+                value={value}
+                onChange={onChange}          
+                />
+        </label> 
+        )
+    }
 
 Filter.propTypes = {
-  value: PropTypes.string.isRequired,
-  onChangeFilter: PropTypes.func.isRequired,
-  contactListLength: PropTypes.number.isRequired,
-};
+    onChange: propTypes.func.isRequired,
+    value: propTypes.string.isRequired
+        
+}
 
 export default Filter;

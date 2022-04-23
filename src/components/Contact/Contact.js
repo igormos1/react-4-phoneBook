@@ -1,24 +1,26 @@
-import React from 'react';
-import PropTypes from 'prop-types'
 import styles from './Contact.module.css';
+import propTypes from 'prop-types';
 
-const Contact = ({ name, number, onDelete }) => {
-    return (
-        <li>
-            <span>{name} : {number}</span>
+const Contact = ({contact, onDelete})=>{
+    
+    return(
+        <li className={styles.li}>
+            <span>{contact.name}: {contact.number}</span>
             <button
+                className={styles.btnDel}
                 type="button"
-                onClick={onDelete}
-                className={styles.deletebutton}
-            >Delete</button>
+                onClick={()=>onDelete(contact.id)}>        
+                Delete
+            </button>
         </li>
     )
-};
+    
+}
 
 Contact.propTypes = {
-  name: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
-  onDelete: PropTypes.func.isRequired,
-};
+    onDelete: propTypes.func.isRequired,
+    contact: propTypes.object.isRequired
+        
+  }
 
 export default Contact;

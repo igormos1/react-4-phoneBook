@@ -1,33 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-// Components
-import Contact from '../Contact/Contact';
+import Contact from "../Contact";
+import propTypes from 'prop-types';
 
-const ContactList = ({ contacts, onDelete }) => (
-  contacts.length > 0 && (
-    <ul>
-      {contacts.map((item) => {
-        const { name, id, number } = item;
-        return (
-          <Contact
-            key={id}
-            name={name}
-            number={number}
-            onDelete={() => onDelete(id)}
-          />
-        );
-      })}
-    </ul>
-  )
-);
+const ContactsList = ({contacts, onDelete}) => {
+    return(
+        <ul>
+          {contacts.map(contact =>{              
+            return <Contact key={contact.id} contact={contact} onDelete={onDelete}/>
+          })}
+        </ul>
+    )
+}
 
-ContactList.propTypes = {
-  contacts: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
-    number: PropTypes.string.isRequired,
-  })).isRequired,
-  onDelete: PropTypes.func.isRequired,
-};
+ContactsList.propTypes = {
+  onDelete: propTypes.func.isRequired,
+  contacts: propTypes.arrayOf(
+    propTypes.object
+  ).isRequired
+      
+}
 
-export default ContactList;
+export default ContactsList;

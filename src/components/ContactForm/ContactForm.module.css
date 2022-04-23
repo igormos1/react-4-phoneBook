@@ -1,14 +1,23 @@
-.contactForm{
-    border: 1px solid grey;
-    width: 400px;
+.ContactForm {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid black;
     padding: 20px;
 }
-.inputForm{
-    margin-bottom: 15px;
-}
-.submitButton{
+
+.label {
     display: block;
+    margin-bottom: 20px;
 }
-.submitButton:disabled{
-    cursor: default;
+
+.inp {
+    display: block;
+    margin-top: 10px;
+}
+
+.btn:focus,
+.btn:hover {
+    cursor: pointer;
+    background-color: aqua;
 }

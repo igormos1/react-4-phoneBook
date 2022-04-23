@@ -1,7 +1,7 @@
 import React, { useEffect, useState} from 'react';
 // Components
 import ContactForm from './ContactForm/ContactForm';
-import ContactList from './ContactList/ContactList';
+import ContactsList from './ContactList/ContactList';
 import Filter from './Filter/Filter';
 import { nanoid } from 'nanoid';
 import styles from './App.module.css';
@@ -70,7 +70,7 @@ const App =()=> {
       
         <Filter value={filter} onChange={onChangeFilter} />      
         <h1>Contacts</h1>
-        <ContactList contacts={visibleContacts} onDelete={deleteCont}/>
+        <ContactsList contacts={visibleContacts} onDelete={deleteCont}/>
       
       </div> 
     );
