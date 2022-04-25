@@ -1,30 +1,28 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
+import styles from './ContactForm.module.css'
 import propTypes from 'prop-types';
-//import { v4 as uuidv4 } from 'uuid';
-import styles from './ContactForm.module.css';
 
-const ContactForm = ({ onSubmit }) => {
-  
-  const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
+const ContactForm = ({onSubmit}) => {
+    
+const [name, setName] = useState('');
+const [number, setNumber] = useState('');
 
+const handleSubmit = e =>  {
+  e.preventDefault();
+  onSubmit({name, number});  
+  setName('');
+  setNumber('');  
+}
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    onSubmit({ name, number });
-    setName('');
-    setNumber('');
-  }
+const handleChangeName = (e) => {
+  setName(e.target.value);   
+};
 
-  const handleChangeName = e => {
-    setName(e.target.value);
-  }
-
-  const handleChangeNumber = (e) => {  
+const handleChangeNumber = (e) => {  
   setNumber(e.target.value);  
-  };
-  
-   return(
+};
+
+  return(
      <form className={styles.ContactForm} onSubmit={handleSubmit}>
         <h1>Phonebook</h1>
         <label className={styles.label}>
@@ -72,8 +70,3 @@ ContactForm.propTypes = {
 
 
 export default ContactForm;
-
-
-
-
-  

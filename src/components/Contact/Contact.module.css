@@ -1,3 +1,13 @@
-.deleteButton{
-    margin-left: 15px;
+.li {
+  margin-bottom: 10px;
+}
+
+.btnDel {
+  margin-left: 15px;
+}
+
+.btnDel:focus,
+.btnDel:hover {
+  cursor: pointer;
+  background-color: aqua;
 }

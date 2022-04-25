@@ -1,23 +1,23 @@
 .ContactForm {
-    display: block;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: 1px solid black;
-    padding: 20px;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid black;
+  padding: 20px;
 }
 
 .label {
-    display: block;
-    margin-bottom: 20px;
+  display: block;
+  margin-bottom: 20px;
 }
 
 .inp {
-    display: block;
-    margin-top: 10px;
+  display: block;
+  margin-top: 10px;
 }
 
 .btn:focus,
 .btn:hover {
-    cursor: pointer;
-    background-color: aqua;
+  cursor: pointer;
+  background-color: aqua;
 }
